@@ -1,0 +1,22 @@
+Entity System:
+1. Khách hàng:
+
+2. Nhà cung cấp:
+
+3. Nhân viên bán hàng:
+
+4. Nhân viên thủ kho:
+
+5. Kho hàng:
+
+6. Sản phẩm:
+
+Các chức năng chính:
+1.Nhận hàng:
+
+2.Xuất hàng:
+
+3.Quản lý kho và hàng tồn kho.
+
+
+4.Thống kê tình hình nhập kho và báo cáo tôn kho(hiển thị tại trang index.html)

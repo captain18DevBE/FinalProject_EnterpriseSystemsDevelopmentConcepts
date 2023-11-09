@@ -1,0 +1,369 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WareHouse-WebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WareHouse-WebApp.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\css\\custom.css",
+      "PackagePath": "staticwebassets\\assets\\css\\custom.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\assets\\css\\font-awesome.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.eot",
+      "PackagePath": "staticwebassets\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.eot"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.svg",
+      "PackagePath": "staticwebassets\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.svg"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.ttf",
+      "PackagePath": "staticwebassets\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.ttf"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.woff",
+      "PackagePath": "staticwebassets\\assets\\font-awesome\\fonts\\fontawesome-webfontba72.woff"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\font-awesome\\fonts\\fontawesome-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\font-awesome\\fonts\\fontawesome-webfontd41d.eot"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\fonts\\glyphicons-halflings-regulard41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\glyphicons-halflings-regulard41d.eot"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\img\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\1.png"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\img\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\2.png"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\img\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\3.png"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\img\\4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\4.png"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\img\\find_user.png",
+      "PackagePath": "staticwebassets\\assets\\img\\find_user.png"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\dataTables\\dataTables.bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables\\dataTables.bootstrap.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\dataTables\\dataTables.bootstrap.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables\\dataTables.bootstrap.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\dataTables\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables\\jquery.dataTables.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\jquery-1.10.2.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-1.10.2.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\jquery.metisMenu.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.metisMenu.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\morris\\morris-0.4.3.min.css",
+      "PackagePath": "staticwebassets\\assets\\js\\morris\\morris-0.4.3.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\morris\\morris.js",
+      "PackagePath": "staticwebassets\\assets\\js\\morris\\morris.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\assets\\js\\morris\\raphael-2.1.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\morris\\raphael-2.1.0.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WareHouse-WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.WareHouse-WebApp.props",
+      "PackagePath": "build\\WareHouse-WebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.WareHouse-WebApp.props",
+      "PackagePath": "buildMultiTargeting\\WareHouse-WebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.WareHouse-WebApp.props",
+      "PackagePath": "buildTransitive\\WareHouse-WebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
