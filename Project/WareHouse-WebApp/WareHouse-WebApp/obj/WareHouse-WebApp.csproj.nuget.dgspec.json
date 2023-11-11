@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj": {}
+    "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj": {}
   },
   "projects": {
-    "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj": {
+    "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
+        "projectUniqueName": "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
         "projectName": "WareHouse-WebApp",
-        "projectPath": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
+        "projectPath": "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\obj\\",
+        "outputPath": "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

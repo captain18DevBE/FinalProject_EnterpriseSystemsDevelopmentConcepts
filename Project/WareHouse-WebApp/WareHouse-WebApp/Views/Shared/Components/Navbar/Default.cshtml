@@ -3,35 +3,102 @@
 *@
 @{
 }
-<nav class="navbar-default navbar-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav" id="main-menu">
-            <li class="text-center">
-                <img src="/assets/img/find_user.png" class="user-image img-responsive" />
-            </li>
+<!-- BOOTSTRAP STYLES-->
 
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <li>
-                <a class="active-menu" href="index.html"><i class="fa fa-dashboard fa-3x"></i> TỔNG QUAN</a>
-            </li>
-            <li>
-                <a href="ui.html"><i class="fa fa-desktop fa-3x"></i> Sản Phẩm</a>
-            </li>
-            <li>
-                <a href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Nhập Kho</a>
-            </li>
-            <li>
-                <a href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Xuất Kho</a>
-            </li>
-            <li>
-                <a href="table.html"><i class="fa fa-table fa-3x"></i> Khách hàng</a>
-            </li>
-            <li>
-                <a href="@Url.Action("")"><i class="fa fa-edit fa-3x"></i> Tạo Phiếu </a>
-            </li>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">LÊ DUY <sup>VIP</sup></div>
+    </a>
 
-        </ul>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>TỔNG QUAN</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        GIAO DỊCH
     </div>
 
-</nav>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>TẠO PHIẾU GD</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="buttons.html">PHIẾU NHẬP HÀNG</a>
+                <a class="collapse-item" href="cards.html">PHIẾU XUẤT HÀNG</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+           aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>ĐỐI TÁC</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+             data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="utilities-color.html">KHÁCH HÀNG</a>
+                <a class="collapse-item" href="utilities-border.html">NHÀ CUNG CẤP</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        HÀNG HÓA
+    </div>
+
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>SẢN PHẨM</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>TỒN KHO</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+
+</ul>
+<!-- End of Sidebar -->

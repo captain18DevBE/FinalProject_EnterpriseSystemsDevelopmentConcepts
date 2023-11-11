@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QR0cH0NyHHey3hW0zc8QC/pLgccfvGwmYaJcuNfnwZB3wgQ9eC8hgT+BN+64DAcZZClI7knBBGsV1lx7rMxkww==",
+  "dgSpecHash": "Uztx7hKDhBpeYP4kkLE0An/1pZfdZ3ZFcFb+Y42YTJCQTy27A6Dh9M4QMeeGtSZhZWrJj7iem3LEWOKkvf8LUQ==",
   "success": true,
-  "projectFilePath": "E:\\TH_ESDC\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
+  "projectFilePath": "E:\\TH_ESDC\\Github\\FinalProject_EnterpriseSystemsDevelopmentConcepts\\Project\\WareHouse-WebApp\\WareHouse-WebApp\\WareHouse-WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
