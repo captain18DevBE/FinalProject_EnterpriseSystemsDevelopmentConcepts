@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WareHouse_WebApp.Data;
 
 namespace WareHouse_WebApp.Components
 {
