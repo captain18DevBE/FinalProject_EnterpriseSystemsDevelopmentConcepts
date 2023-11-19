@@ -23,7 +23,7 @@
 
 <body id="page-top">
 
-    @RenderBody()
+    
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -99,24 +99,13 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
-
-            @await Component.InvokeAsync("PageHeading")
-                <div style=" margin: 10px !important;">
-                    @await Component.InvokeAsync("Cards")
-                </div>
+                @RenderBody()
 
 
             <!-- End of Main Content -->
 
                 <!--Temp component-->
-                <div class="row" style=" margin: 10px !important;">
-                    @await Component.InvokeAsync("ProductTable")
-                </div>
-
-                <div class="row" style=" margin: 10px !important;">
-                    @await Component.InvokeAsync("CreateProduct")
-                </div>
+               
                 <!--Temp component-->
 
         </div>
@@ -144,7 +133,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.cshtml">Logout</a>
+                    <a class="btn btn-primary" href="../Views/Shared/login.cshtml">Logout</a>
                 </div>
             </div>
         </div>

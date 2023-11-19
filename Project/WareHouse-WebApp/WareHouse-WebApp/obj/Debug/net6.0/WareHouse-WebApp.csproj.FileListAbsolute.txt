@@ -856,3 +856,4 @@ D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcept
 D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcepts\Project\WareHouse-WebApp\WareHouse-WebApp\obj\Debug\net6.0\WareHouse-WebApp.pdb
 D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcepts\Project\WareHouse-WebApp\WareHouse-WebApp\obj\Debug\net6.0\WareHouse-WebApp.genruntimeconfig.cache
 D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcepts\Project\WareHouse-WebApp\WareHouse-WebApp\obj\Debug\net6.0\ref\WareHouse-WebApp.dll
+D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcepts\Project\WareHouse-WebApp\WareHouse-WebApp\obj\Debug\net6.0\WareHouse-WebApp.sourcelink.json

@@ -1,4 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@await Component.InvokeAsync("PageHeading")
+<div style=" margin: 10px !important;">
+    @await Component.InvokeAsync("Cards")
+</div>
 
+@* <div class="row" style=" margin: 10px !important;">
+    @await Component.InvokeAsync("ProductTable")
+</div>
+
+<div class="row" style=" margin: 10px !important;">
+    @await Component.InvokeAsync("CreateProduct")
+</div> *@

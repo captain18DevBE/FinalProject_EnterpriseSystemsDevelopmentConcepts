@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WareHouse_WebApp
 build_property.RootNamespace = WareHouse_WebApp
 build_property.ProjectDir = D:\HK-V 2023 - 2024\LT_DN\final\FinalProject_EnterpriseSystemsDevelopmentConcepts\Project\WareHouse-WebApp\WareHouse-WebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -18,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 
 [D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Accounts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Accounts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Accounts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Categories/Create.cshtml]
@@ -40,12 +62,112 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Customers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Customers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/DeliveryNotes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlOb3Rlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/DeliveryNotes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlOb3Rlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/DeliveryNotes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlOb3Rlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/DeliveryNotes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlOb3Rlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/DeliveryNotes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVsaXZlcnlOb3Rlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Employees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Employees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Employees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Employees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Employees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/GoodsReceipts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXB0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/GoodsReceipts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXB0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/GoodsReceipts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXB0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/GoodsReceipts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXB0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/GoodsReceipts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZHNSZWNlaXB0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Manufacturers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWZhY3R1cmVyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Manufacturers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWZhY3R1cmVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Manufacturers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWZhY3R1cmVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Manufacturers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWZhY3R1cmVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/Manufacturers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWZhY3R1cmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/HK-V 2023 - 2024/LT_DN/final/FinalProject_EnterpriseSystemsDevelopmentConcepts/Project/WareHouse-WebApp/WareHouse-WebApp/Views/ProductDetails/Create.cshtml]
