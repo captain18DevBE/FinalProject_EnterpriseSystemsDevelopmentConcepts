@@ -22,7 +22,13 @@ namespace WareHouse_WebApp.Controllers
         // GET: Manufacturers
         public async Task<IActionResult> Index()
         {
-              return _context.Manufacturer != null ? 
+            //List<Manufacturer> list = new List<Manufacturer>();
+            //list = await _context.Manufacturer.ToListAsync();
+            //if (list != null)
+            //{
+            //    //HttpContext.Session.Set("ManufacturerList", list);
+            //}
+            return _context.Manufacturer != null ? 
                           View(await _context.Manufacturer.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Manufacturer'  is null.");
         }

@@ -7,21 +7,32 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WareHouse_WebApp.Data;
 using WareHouse_WebApp.Models;
+using WareHouse_WebApp.Service;
 
 namespace WareHouse_WebApp.Controllers
 {
     public class ProductDetailsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly GoodsReceipDetailDAO _goodsReceipDetailDAO;
 
-        public ProductDetailsController(ApplicationDbContext context)
+        public ProductDetailsController(ApplicationDbContext context, GoodsReceipDetailDAO goodsReceipDetailDAO)
         {
             _context = context;
+            _goodsReceipDetailDAO = goodsReceipDetailDAO;
         }
 
         // GET: ProductDetails
         public async Task<IActionResult> Index()
         {
+
+            //Test Data
+              //GoodsReceipDetail goodsReceipDetail = new GoodsReceipDetail();
+              //goodsReceipDetail.GoodsReceipId = "RC01";
+              //goodsReceipDetail.ProductId = "SP01";
+            //await _goodsReceipDetailDAO.AddGoodsReceipDetail(goodsReceipDetail);
+
+            //Test Data
               return _context.ProductDetail != null ? 
                           View(await _context.ProductDetail.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.ProductDetail'  is null.");
@@ -60,6 +71,7 @@ namespace WareHouse_WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                productDetail.DateOfBuy = DateTime.Now;
                 _context.Add(productDetail);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -90,7 +102,14 @@ namespace WareHouse_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("ProductId,ProductName,Amount,CostPrice,ProductPhoto,Type,SellingPrice,Status,CatalogId")] ProductDetail productDetail)
         {
-            if (id != productDetail.ProductId)
+            productDetail.DateOfBuy = DateTime.Now;
+            ProductDetail productSave = await _context.ProductDetail.FindAsync(id);
+            int amount = productSave.Amount;
+            if (amount > productDetail.Amount)
+            {
+                productSave.Amount = amount - productDetail.Amount;
+            }
+            if (id != productSave.ProductId)
             {
                 return NotFound();
             }
@@ -99,12 +118,12 @@ namespace WareHouse_WebApp.Controllers
             {
                 try
                 {
-                    _context.Update(productDetail);
+                    _context.Update(productSave);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductDetailExists(productDetail.ProductId))
+                    if (!ProductDetailExists(productSave.ProductId))
                     {
                         return NotFound();
                     }
@@ -113,7 +132,11 @@ namespace WareHouse_WebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                TempData["productId"] = productDetail.ProductId;
+                TempData["amountProduct"] = productDetail.Amount;
+                int result = productDetail.Amount * Decimal.ToInt32((decimal)productDetail.CostPrice);
+                TempData["priceBill"] = result;
+                return RedirectToAction("Create", "DeliveryNotes");
             }
             return View(productDetail);
         }

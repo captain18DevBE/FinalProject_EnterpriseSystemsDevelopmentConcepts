@@ -3,59 +3,93 @@
 @{
     ViewData["Title"] = "Create";
 }
+@{
+    var lastItem = TempData["LastdeliveryNoteId"];
+    string LastdeliveryNoteId = "DN01";
+    if (lastItem != null)
+    {
+        LastdeliveryNoteId = TempData["LastdeliveryNoteId"].ToString();
+        string numberPart = LastdeliveryNoteId.Substring(2);
+        if (int.TryParse(numberPart, out int number))
+        {
+            number++;
+            LastdeliveryNoteId = $"DN{number:D2}";
+        }
+    }
+}
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
 
-<h1>Create</h1>
-
-<h4>DeliveryNote</h4>
+<h1 class="title">TẠO PHIẾU XUẤT KHO</h1>
+<h1 class="title">@TempData["LastdeliveryNoteId"]</h1>
 <hr />
-<div class="row">
+<div class="row title">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DeliveryNoteId" class="control-label"></label>
-                <input asp-for="DeliveryNoteId" class="form-control" />
+                <label asp-for="DeliveryNoteId" class="control-label">Mã phiếu xuất kho</label>
+                <input asp-for="DeliveryNoteId" class="form-control" value="@LastdeliveryNoteId" readonly/>
                 <span asp-validation-for="DeliveryNoteId" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="DateOfCreation" class="control-label"></label>
-                <input asp-for="DateOfCreation" class="form-control" />
-                <span asp-validation-for="DateOfCreation" class="text-danger"></span>
+                <label asp-for="ProductId" class="control-label">Mã sản phẩm</label>
+                <input asp-for="ProductId" class="form-control" value="@TempData["productId"]"/>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Mã khách hàng</label>
+                <input asp-for="CustomerId" class="form-control" />
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EmployeeId" class="control-label">Mã nhân viên</label>
+                <input asp-for="EmployeeId" class="form-control" />
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+                <label asp-for="Status" class="control-label">Trạng thái</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalAmount" class="control-label"></label>
-                <input asp-for="TotalAmount" class="form-control" />
+                <label asp-for="TotalAmount" class="control-label">Tổng tiền</label>
+                <input asp-for="TotalAmount" class="form-control" value="@TempData["priceBill"]" readonly/>
                 <span asp-validation-for="TotalAmount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PayMethod" class="control-label"></label>
-                <input asp-for="PayMethod" class="form-control" />
-                <span asp-validation-for="PayMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AmountPaid" class="control-label"></label>
+                <label asp-for="AmountPaid" class="control-label">Đã trả</label>
                 <input asp-for="AmountPaid" class="form-control" />
                 <span asp-validation-for="AmountPaid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AmountOwed" class="control-label"></label>
+                <label asp-for="AmountOwed" class="control-label">Còn nợ</label>
                 <input asp-for="AmountOwed" class="form-control" />
                 <span asp-validation-for="AmountOwed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="PayMethod" class="control-label">Phương thức TT</label>
+                <input asp-for="PayMethod" class="form-control" />
+                <span asp-validation-for="PayMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="TẠO PHIẾU" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="title" asp-action="Index">DANH SÁCH PHIẾU</a>
 </div>
 
 @section Scripts {

@@ -7,22 +7,29 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WareHouse_WebApp.Data;
 using WareHouse_WebApp.Models;
+using WareHouse_WebApp.Service;
 
 namespace WareHouse_WebApp.Controllers
 {
     public class GoodsReceiptsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public GoodsReceiptsController(ApplicationDbContext context)
+        private readonly GoodReceiptDAO _goodReceiptDAO;
+        private readonly ManufacturersDAO _manufacturersDAO;
+        private readonly ProductDetailDAO _productDetailDAO;
+        public GoodsReceiptsController(ApplicationDbContext context, GoodReceiptDAO goodReceiptDAO, ManufacturersDAO manufacturersDAO, ProductDetailDAO productDetailDAO)
         {
             _context = context;
+            _goodReceiptDAO = goodReceiptDAO;
+            _manufacturersDAO = manufacturersDAO;
+            _productDetailDAO = productDetailDAO;
         }
 
         // GET: GoodsReceipts
         public async Task<IActionResult> Index()
         {
-              return _context.GoodsReceipts != null ? 
+            //Manufacturer manufacturer = _manufacturersDAO.GetManufacturerById();
+             return _context.GoodsReceipts != null ? 
                           View(await _context.GoodsReceipts.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.GoodsReceipts'  is null.");
         }
@@ -30,6 +37,20 @@ namespace WareHouse_WebApp.Controllers
         // GET: GoodsReceipts/Details/5
         public async Task<IActionResult> Details(string id)
         {
+            string manufactId = "GR01";
+            Manufacturer manufacturer = null;
+
+            manufactId = Request.Query["manufac"];
+            manufacturer = await _manufacturersDAO.GetManufacturerById(manufactId);
+            TempData["Manufact"] = manufacturer;
+            
+
+            string productId = "SP01";
+            ProductDetail product = null;
+            productId = Request.Query["product"];
+            product = await _productDetailDAO.GetProductById(productId);
+            TempData["product"] = product;
+
             if (id == null || _context.GoodsReceipts == null)
             {
                 return NotFound();
@@ -46,8 +67,12 @@ namespace WareHouse_WebApp.Controllers
         }
 
         // GET: GoodsReceipts/Create
-        public IActionResult Create()
+        public async Task<IActionResult> CreateAsync()
         {
+            string productId = RouteData.Values["id"] as string;
+            GoodsReceipt getId = await _goodReceiptDAO.GetLastGoodsReceipt();
+            TempData["GoodsReceiptId"] = getId.GoodsReceiptId;
+            TempData["productId"] = productId;
             return View();
         }
 
@@ -56,8 +81,11 @@ namespace WareHouse_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GoodsReceiptId,Status,DateOfCreation,TotalAmount,Discount,AmountPaid,AmountOwed,PayMethod,EmployeeId")] GoodsReceipt goodsReceipt)
+        public async Task<IActionResult> Create([Bind("GoodsReceiptId,Status,TotalAmount,Discount,AmountPaid,AmountOwed,PayMethod,EmployeeId,ProductId,ManufacturerId")] GoodsReceipt goodsReceipt)
         {
+            //goodsReceipt.ProductId = (string?) TempData["productId"];
+
+            goodsReceipt.DateOfCreation = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(goodsReceipt);

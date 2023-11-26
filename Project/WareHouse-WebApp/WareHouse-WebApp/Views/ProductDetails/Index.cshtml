@@ -2,46 +2,67 @@
 
 @{
     ViewData["Title"] = "Index";
-}
 
-<h1>Index</h1>
+}
+@{
+    ViewData["Title"] = "Index";
+    ProductDetail lastProductDetail = Model.LastOrDefault();
+
+    string tmpValue = lastProductDetail.ProductId;
+    TempData["LastProductDetail"] = tmpValue;
+}
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
+<div class="title">
+    <h1>QUẢN LÝ HÀNG HÓA</h1>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">THÊM MẶT HÀNG MỚI</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProductName)
+                Mã sản phẩm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Amount)
+               Tên sản phẩm
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CostPrice)
+                Số lượng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProductPhoto)
+                Giá bán
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                Loại mặt hàng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SellingPrice)
+                Giảm giá
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                Ngày nhập kho
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CatalogId)
+                Thao tác
             </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
@@ -52,24 +73,20 @@
                 @Html.DisplayFor(modelItem => item.CostPrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductPhoto)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SellingPrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
+                @Html.DisplayFor(modelItem => item.DateOfBuy)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CatalogId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    <a asp-controller="GoodsReceipts" asp-action="Create" asp-route-id="@item.ProductId">TẠO PHIẾU NHẬP</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">TẠO PHIẾU XUẤT</a> |
+                <a asp-action="Edit" asp-route-id="@item.ProductId">CHỈNH SỬA</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">CHI TIẾT SP</a> |
+@*                 <a asp-action="Delete" asp-route-id="@item.ProductId">Xóa</a> *@
             </td>
         </tr>
 }

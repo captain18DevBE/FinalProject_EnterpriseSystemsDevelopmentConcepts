@@ -25,6 +25,10 @@ namespace WareHouse_WebApp.Models
         [Column(TypeName = "decimal(12,2)")]
         public decimal? SellingPrice { get; set; }
         [StringLength(50)]
+
+        //update
+        public DateTime? DateOfBuy { get; set; }
+
         public string? Status { get; set; }
         [ForeignKey("Catalog")]
         public string? CatalogId { get; set; }

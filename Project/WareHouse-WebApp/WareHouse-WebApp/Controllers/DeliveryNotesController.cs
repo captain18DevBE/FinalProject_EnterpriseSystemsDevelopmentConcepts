@@ -1,27 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WareHouse_WebApp.Data;
 using WareHouse_WebApp.Models;
+using WareHouse_WebApp.Service;
 
 namespace WareHouse_WebApp.Controllers
 {
     public class DeliveryNotesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly DeliveryNoteDAO _deliveryNoteDAO;
+        private readonly CustomersDAO _customerDAO;
+        private readonly ProductDetailDAO _productDetailDAO;
 
-        public DeliveryNotesController(ApplicationDbContext context)
+        public DeliveryNotesController(ApplicationDbContext context, DeliveryNoteDAO deliveryNoteDAO, CustomersDAO customersDAO, ProductDetailDAO productDetailDAO)
         {
             _context = context;
+            _deliveryNoteDAO = deliveryNoteDAO;
+            _customerDAO = customersDAO;
+            _productDetailDAO = productDetailDAO;
         }
 
         // GET: DeliveryNotes
         public async Task<IActionResult> Index()
         {
+              
               return _context.DeliveryNotes != null ? 
                           View(await _context.DeliveryNotes.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.DeliveryNotes'  is null.");
@@ -30,6 +40,16 @@ namespace WareHouse_WebApp.Controllers
         // GET: DeliveryNotes/Details/5
         public async Task<IActionResult> Details(string id)
         {
+
+            string productId = "SP01";
+            ProductDetail product = null;
+            productId = Request.Query["product"];
+            product = await _productDetailDAO.GetProductById(productId);
+
+            //string serializedProduct = JsonSerializer.Serialize(product);
+            //HttpContext.Session.SetString("product", serializedProduct);
+
+
             if (id == null || _context.DeliveryNotes == null)
             {
                 return NotFound();
@@ -37,6 +57,7 @@ namespace WareHouse_WebApp.Controllers
 
             var deliveryNote = await _context.DeliveryNotes
                 .FirstOrDefaultAsync(m => m.DeliveryNoteId == id);
+
             if (deliveryNote == null)
             {
                 return NotFound();
@@ -46,8 +67,12 @@ namespace WareHouse_WebApp.Controllers
         }
 
         // GET: DeliveryNotes/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            DeliveryNote deliveryNote = await _deliveryNoteDAO.getLastAsync();
+            TempData["LastdeliveryNoteId"] = deliveryNote.DeliveryNoteId;
+            TempData.Keep("productId");
+            TempData.Keep("amountProduct");
             return View();
         }
 
@@ -56,8 +81,10 @@ namespace WareHouse_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DeliveryNoteId,DateOfCreation,Status,TotalAmount,PayMethod,AmountPaid,AmountOwed")] DeliveryNote deliveryNote)
+        public async Task<IActionResult> Create([Bind("DeliveryNoteId,ProductId,CustomerId,EmployeeId,Status,TotalAmount,AmountPaid,AmountOwed,PayMethod")] DeliveryNote deliveryNote)
         {
+            deliveryNote.DateOfCreation = DateTime.Now;
+           //var tmp = deliveryNote.
             if (ModelState.IsValid)
             {
                 _context.Add(deliveryNote);

@@ -2,8 +2,15 @@
 
 @{
     ViewData["Title"] = "Index";
+    Customer lastCustomer = Model.LastOrDefault();
+    string tmpValue = lastCustomer.CustomerId;
+    TempData["LastCustomerId"] = tmpValue;
 }
+@* @{
+    var lastItem = Model.LastOrDefault();
+    string LastId = lastItem.CustomerId;
 
+} *@
 <h1>Index</h1>
 
 <p>
@@ -12,6 +19,9 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.CustomerName)
             </th>
@@ -29,7 +39,14 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+@*             if(string.Compare(tmpValue, item.CustomerId) > 1)
+            {
+                tmpValue = item.CustomerId;
+            }  *@
+            <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
@@ -47,7 +64,9 @@
                 <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
             </td>
-        </tr>
+            </tr>
+
+@*             tmpValue = item.CustomerId; *@
 }
     </tbody>
 </table>

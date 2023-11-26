@@ -3,39 +3,53 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
+<h1 class="title">QUẢN LÝ PHIẾU XUẤT KHO</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfCreation)
+                Mã phiếu
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Status)
+                Ngày tạo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TotalAmount)
+                Trạng thái
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PayMethod)
+                Tổng tiền
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountPaid)
+                Phương thức TT
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountOwed)
+                Đã thanh toán
             </th>
-            <th></th>
+            <th>
+                Còn nợ
+            </th>
+            <th>Thao tác</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryNoteId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfCreation)
             </td>
@@ -51,13 +65,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AmountPaid)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountOwed)
+                </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AmountOwed)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DeliveryNoteId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DeliveryNoteId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DeliveryNoteId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.DeliveryNoteId">CHỈNH SỬA</a> |
+                    <a asp-action="Details" asp-route-id="@item.DeliveryNoteId" asp-route-customer="@item.CustomerId" asp-route-product="@item.ProductId">THÔNG TIN</a> |
+                <a asp-action="Delete" asp-route-id="@item.DeliveryNoteId">XÓA</a>
             </td>
         </tr>
 }

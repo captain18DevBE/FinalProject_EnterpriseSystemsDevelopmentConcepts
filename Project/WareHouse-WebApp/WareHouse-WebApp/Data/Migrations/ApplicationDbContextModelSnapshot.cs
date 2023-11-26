@@ -302,12 +302,24 @@ namespace WareHouse_WebApp.Data.Migrations
                     b.Property<decimal?>("AmountPaid")
                         .HasColumnType("decimal(12,2)");
 
+                    b.Property<int>("AmountProduct")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DateOfCreation")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("EmployeeId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PayMethod")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasMaxLength(50)
@@ -410,9 +422,15 @@ namespace WareHouse_WebApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ManufacturerId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PayMethod")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasMaxLength(50)
@@ -515,6 +533,10 @@ namespace WareHouse_WebApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("decimal(12,2)");
 
+                    b.Property<DateTime?>("DateOfBuy")
+                        .HasMaxLength(50)
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -529,8 +551,7 @@ namespace WareHouse_WebApp.Data.Migrations
                         .HasColumnType("decimal(12,2)");
 
                     b.Property<string>("Status")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()

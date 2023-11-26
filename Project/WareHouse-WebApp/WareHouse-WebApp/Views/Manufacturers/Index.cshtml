@@ -3,15 +3,23 @@
 @{
     ViewData["Title"] = "Index";
 }
+@{
+    ViewData["Title"] = "Index";
+    Manufacturer lastManufacturer = Model.LastOrDefault();
 
+    string tmpValue = lastManufacturer.ManufacturerId;
+    TempData["LastManufacturerId"] = tmpValue;
+}
 <h1>Index</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturerId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ManufacturerName)
             </th>
@@ -32,7 +40,10 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManufacturerId)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ManufacturerName)
             </td>
@@ -57,3 +68,4 @@
 }
     </tbody>
 </table>
+

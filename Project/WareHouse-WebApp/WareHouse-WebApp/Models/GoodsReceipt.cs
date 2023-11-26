@@ -24,5 +24,11 @@ namespace WareHouse_WebApp.Models
         [Required]
         [ForeignKey("Employee")]
         public string? EmployeeId { get; set; }
+
+        [ForeignKey("ProductDetail")]
+        public string? ProductId { get; set; }
+
+        [ForeignKey("Manufacturer")]
+        public string? ManufacturerId { get; set; }
     }
 }

@@ -20,5 +20,14 @@ namespace WareHouse_WebApp.Models
         [Column(TypeName = "decimal(12,2)")]
         public decimal AmountOwed { get; set; }
 
+        //UPDATE
+        public int AmountProduct { get; set; }
+
+        [ForeignKey("Customer")]
+        public string? CustomerId { get; set; }
+        [ForeignKey("Employee")]
+        public string? EmployeeId { get; set; }
+        [ForeignKey("ProductDetail")]
+        public string? ProductId { get; set; }
     }
 }

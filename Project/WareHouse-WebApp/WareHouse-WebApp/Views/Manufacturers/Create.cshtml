@@ -1,12 +1,21 @@
 ﻿@model WareHouse_WebApp.Models.Manufacturer
-
 @{
     ViewData["Title"] = "Create";
+    var lastItem = TempData["LastManufacturerId"];
+    string ManufacturerId = "NC01";
+    if (lastItem != null)
+    {
+        ManufacturerId = TempData["LastManufacturerId"].ToString();
+        string numberPart = ManufacturerId.Substring(2);
+        if (int.TryParse(numberPart, out int number))
+        {
+            number++;
+            ManufacturerId = $"NC{number:D2}";
+        }
+    }
 }
 
 <h1>Create</h1>
-
-<h4>Manufacturer</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,7 +23,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ManufacturerId" class="control-label"></label>
-                <input asp-for="ManufacturerId" class="form-control" />
+                <input asp-for="ManufacturerId" class="form-control" value="@ManufacturerId" readonly/>
                 <span asp-validation-for="ManufacturerId" class="text-danger"></span>
             </div>
             <div class="form-group">

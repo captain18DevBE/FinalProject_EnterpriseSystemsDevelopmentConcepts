@@ -1,9 +1,19 @@
 ﻿@model WareHouse_WebApp.Models.Customer
-
 @{
     ViewData["Title"] = "Create";
+    var lastItem = TempData["LastCustomerId"];
+    string CustomerId = "KH01";
+    if (lastItem != null)
+    {
+        CustomerId = TempData["LastCustomerId"].ToString();
+        string numberPart = CustomerId.Substring(2);
+        if (int.TryParse(numberPart, out int number))
+        {
+            number++;
+            CustomerId = $"KH{number:D2}";
+        }
+    }
 }
-
 <h1>Create</h1>
 
 <h4>Customer</h4>
@@ -14,7 +24,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CustomerId" class="control-label"></label>
-                <input asp-for="CustomerId" class="form-control" />
+                <input asp-for="CustomerId" class="form-control" value="@CustomerId" readonly/>
                 <span asp-validation-for="CustomerId" class="text-danger"></span>
             </div>
             <div class="form-group">

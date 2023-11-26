@@ -4,63 +4,183 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>GoodsReceipt</h4>
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
+
+<h1 class="title">THÔNG TIN CHI TIẾT</h1>
+
+<div class="title">
+    <h4>PHIẾU NHẬP HÀNG</h4>
     <hr />
-    <dl class="row">
+    <dl class="row title">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
+           TRẠNG THÁI
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfCreation)
+            THỜI GIAN
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DateOfCreation)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalAmount)
+            TỔNG GIÁ
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TotalAmount)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
+            TIỀN GIẢM
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Discount)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AmountPaid)
+            THANH TOÁN
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AmountPaid)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AmountOwed)
+            ĐÃ THANH TOÁN
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AmountOwed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PayMethod)
+            PHƯƠNG THỨC TT
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PayMethod)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmployeeId)
+            MÃ NHÂN VIÊN
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EmployeeId)
         </dd>
     </dl>
+
+    @{
+        Manufacturer manufacturer = TempData["Manufact"] as Manufacturer;
+        ProductDetail productDetail = TempData["product"] as ProductDetail;
+    }
+    <h4>THÔNG TIN SẢN PHẨM</h4>
+    <hr />
+    <dl class="row title">
+        <dt class="col-sm-2">
+            Mã sản phẩm
+        </dt>
+        <dd class="col-sm-10">
+            @productDetail.ProductId
+        </dd>
+        <dt class="col-sm-2">
+            Tên sản phẩm
+        </dt>
+        <dd class="col-sm-10">
+            @productDetail.ProductName
+        </dd>
+        <dt class="col-sm-2">
+            Số lượng
+        </dt>
+        <dd class="col-sm-10">
+            @productDetail.Amount
+        </dd>
+    </dl>
+
+    <h4>THÔNG TIN NHÀ CUNG CẤP</h4>
+    <hr />
+    <dl class="row title">
+        <dt class="col-sm-2">
+            Mã nhà cung cấp
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.ManufacturerId
+        </dd>
+        <dt class="col-sm-2">
+            Tên nhà cung cấp
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.ManufacturerName
+        </dd>
+        <dt class="col-sm-2">
+            Số điện thoại
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.PhoneNumber
+        </dd>
+        <dt class="col-sm-2">
+            Địa chỉ Email
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.Email
+        </dd>
+        <dt class="col-sm-2">
+            Địa chỉ doanh nghiệp
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.Address
+        </dd>
+        <dt class="col-sm-2">
+            Ghi chú
+        </dt>
+        <dd class="col-sm-10">
+            @manufacturer.Note
+        </dd>
+    </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.GoodsReceiptId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="title" style="margin-top: 50px">
+    <a asp-action="Edit" asp-route-id="@Model?.GoodsReceiptId">CHỈNH SỬA</a> |
+    <a asp-action="Index">DANH SÁCH PHIẾU</a>
 </div>
+<div class="title" style="margin-top: 20px">
+    <button onclick="saveAsTextFile()">TẠO HÓA ĐƠN</button>
+</div>
+
+<script>
+    function saveAsTextFile() {
+
+        var content = "THÔNG TIN HÓA ĐƠN \nMã hóa đơn: @Model.GoodsReceiptId \n";
+        content += "Thời gian: " + "@Model.DateOfCreation" + "\n";
+        content += "Tổng giá: " + "@Model.TotalAmount" + "\n";
+        content += "Trạng thái: " + "@Model.Status" + "\n";
+        content += "Tiền giảm: " + "@Model.Discount" + "\n";
+        content += "Số tiền cần thanh toán: " + "@Model.AmountPaid" + "\n";
+        content += "Đã thanh toán: " + "@Model.AmountPaid" + "\n";
+        content += "Tiền nợ: " + "@Model.AmountOwed" + "\n\n";
+
+        content += "THÔNG TIN NHÀ CUNG CẤP \n" + "Mã nhà cung cấp: " + "@manufacturer.ManufacturerId" + "\n";
+        content += "Tên nhà cung cấp: " + "@manufacturer.ManufacturerName" + "\n";
+        content += "Số điện thoại: " + "@manufacturer.PhoneNumber" + "\n";
+        content += "Địa chỉ Email: " + "@manufacturer.Email" + "\n";
+        content += "Địa chỉ công ty: " + "@manufacturer.Address" + "\n";
+        content += "Ghi chú: " + "@manufacturer.Note" + "\n\n";
+
+        content += "THÔNG TIN SẢN PHẨM \n" + "Mã sản phẩm: " + "@productDetail.ProductId" + "\n";
+        content += "Tên sản phẩm: " + "@productDetail.ProductName" + "\n";
+        content += "Số lượng: " + "@productDetail.Amount" + "\n";
+        content += "Loại sản phẩm: " + "@productDetail.Type" + "\n\n";
+
+        var blob = new Blob([content], { type: 'text/plain' });
+        var url = URL.createObjectURL(blob);
+
+
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'thong_tin_chi_tiet.txt'; 
+        document.body.appendChild(a);
+        a.click();
+
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+</script>

@@ -3,45 +3,58 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
-
-<div>
-    <h4>DeliveryNote</h4>
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
+<h1 class="title">TÔNG TIN PHIẾU BÁN HÀNG</h1>
+<h1 class="title">@TempData["ErrorMessage"]</h1>
+<div class="title">
+    <h4>Phiếu bán hàng</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfCreation)
+            Mã phiếu bán hàng
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+        <dt class="col-sm-2">
+            Ngày tạo phiếu
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DateOfCreation)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
+            Trạng thái
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalAmount)
+        <dt class="col-sm-2">
+            Tổng giá trị
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.TotalAmount)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PayMethod)
+            Phương thức TT
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PayMethod)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AmountPaid)
+        <dt class="col-sm-2">
+            Đã thanh toán
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AmountPaid)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AmountOwed)
+            Còn nợ
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.AmountOwed)

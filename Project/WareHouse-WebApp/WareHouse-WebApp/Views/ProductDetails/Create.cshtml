@@ -2,71 +2,94 @@
 
 @{
     ViewData["Title"] = "Create";
+    @* @using WareHouse_WebApp.Service *@
+
 }
 
-<h1>Create</h1>
+@{
+    ViewData["Title"] = "Create";
+    var lastItem = TempData["LastProductDetail"];
+    string ProductDetailId = "SP01";
+    if (lastItem != null)
+    {
+        ProductDetailId = TempData["LastProductDetail"].ToString();
+        string numberPart = ProductDetailId.Substring(2);
+        if (int.TryParse(numberPart, out int number))
+        {
+            number++;
+            ProductDetailId = $"SP{number:D2}";
+        }
+    }
+}
 
-<h4>ProductDetail</h4>
+<header>
+    <style>
+        .title {
+            display: flex;
+            justify-content: center; /* Căn giữa theo chiều ngang */
+        }
+    </style>
+</header>
+<div class="title">
+    <h1>TẠO MẶT HÀNG SẢN PHẨM</h1>
+</div>
 <hr />
-<div class="row">
+<div class="row title">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ProductId" class="control-label"></label>
-                <input asp-for="ProductId" class="form-control" />
+                <label asp-for="ProductId" class="control-label">Mã sản phẩm</label>
+                <input asp-for="ProductId" class="form-control" value="@ProductDetailId"/>
                 <span asp-validation-for="ProductId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
+                <label asp-for="ProductName" class="control-label">Tên sản phẩm</label>
                 <input asp-for="ProductName" class="form-control" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
+                <label asp-for="Amount" class="control-label">Số lượng</label>
                 <input asp-for="Amount" class="form-control" />
                 <span asp-validation-for="Amount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CostPrice" class="control-label"></label>
+                <label asp-for="CostPrice" class="control-label">Giá trị</label>
                 <input asp-for="CostPrice" class="form-control" />
                 <span asp-validation-for="CostPrice" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ProductPhoto" class="control-label"></label>
-                <input asp-for="ProductPhoto" class="form-control" />
-                <span asp-validation-for="ProductPhoto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
+                <label asp-for="Type" class="control-label">Loại sản phẩm</label>
                 <input asp-for="Type" class="form-control" />
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SellingPrice" class="control-label"></label>
+                <label asp-for="SellingPrice" class="control-label">Giảm giá</label>
                 <input asp-for="SellingPrice" class="form-control" />
                 <span asp-validation-for="SellingPrice" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
+@*             <div class="form-group">
+                <label asp-for="Status" class="control-label">Trạng thái</label>
                 <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div> *@
+@*             <div class="form-group">
                 <label asp-for="CatalogId" class="control-label"></label>
                 <input asp-for="CatalogId" class="form-control" />
                 <span asp-validation-for="CatalogId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div> *@
+            <div class="form-group title">
                 <input type="submit" value="Create" class="btn btn-primary" />
+
+            </div>
+            <div class="title">
+                <a asp-action="Index">Danh sách sản phẩm</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
