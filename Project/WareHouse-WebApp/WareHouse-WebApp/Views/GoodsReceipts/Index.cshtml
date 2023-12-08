@@ -15,9 +15,9 @@
 
 <h1 class="title">QUẢN LÝ PHIẾU NHẬP HÀNG</h1>
 
-@* <p>
+<p>
     <a asp-action="Create">Create New</a>
-</p> *@
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -25,27 +25,19 @@
                 Mã phiếu nhập
             </th>
             <th>
-                Trạng thái
-            </th>
-            <th>
                 Ngày tạo
             </th>
             <th>
                 Tổng giá trị
             </th>
-            <th>
-                Giá giảm
-            </th>
-            <th>
-                Cần thanh toán
-            </th>
+            
             <th>
                 Đã thanh toán
             </th>
             <th>
-                Phương thức
+                Còn nợ
             </th>
-            <th>Thao tác</th>
+            <th>Phương thức TT</th>
         </tr>
     </thead>
     <tbody>
@@ -55,16 +47,10 @@
                     @Html.DisplayFor(modelItem => item.GoodsReceiptId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.DateOfCreation)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TotalAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AmountPaid)

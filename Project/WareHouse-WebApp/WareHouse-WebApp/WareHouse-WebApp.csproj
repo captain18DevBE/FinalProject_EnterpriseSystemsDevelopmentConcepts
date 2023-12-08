@@ -10,8 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.22" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.22" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.23">
@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Migrations\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>

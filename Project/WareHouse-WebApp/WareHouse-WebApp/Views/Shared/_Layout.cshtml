@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,91 +30,85 @@
     
     <!-- Page Wrapper -->
     <div id="wrapper">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            @await Component.InvokeAsync("Navbar");
+        }
+        
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
 
-        @await Component.InvokeAsync("Navbar")
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
 
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                        <!-- Topbar Search -->
+                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                 aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+                                    </form>
+                                </div>
+                            </li>
 
 
-                        <!--Cut -->
-                        @await Component.InvokeAsync("Notification")
+                            <!--Cut -->
+                            @await Component.InvokeAsync("Notification")
 
-                        <!-- Cut Nav Item - Messages -->
-                        @await Component.InvokeAsync("Message")
+                            <!-- Cut Nav Item - Messages -->
+                            @await Component.InvokeAsync("Message")
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                            <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!-- Cut Nav Item - User Information -->
-                        @await Component.InvokeAsync("UserInf")
+                            <!-- Cut Nav Item - User Information -->
+                            @await Component.InvokeAsync("UserInf")
 
-                    </ul>
+                        </ul>
+                    </nav>
 
-                </nav>
-                <!-- End of Topbar -->
+                    
+                }
                 @RenderBody()
-
-
-            <!-- End of Main Content -->
-
-                <!--Temp component-->
-               
-                <!--Temp component-->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+                </div>
+            </div>
+        
+        
     </div>
     <!-- End of Page Wrapper -->
     <!-- Scroll to Top Button-->

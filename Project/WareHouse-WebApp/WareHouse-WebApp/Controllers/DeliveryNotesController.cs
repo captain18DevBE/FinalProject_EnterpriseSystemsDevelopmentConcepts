@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using WareHouse_WebApp.Components;
 using WareHouse_WebApp.Data;
 using WareHouse_WebApp.Models;
 using WareHouse_WebApp.Service;
@@ -19,13 +22,17 @@ namespace WareHouse_WebApp.Controllers
         private readonly DeliveryNoteDAO _deliveryNoteDAO;
         private readonly CustomersDAO _customerDAO;
         private readonly ProductDetailDAO _productDetailDAO;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public DeliveryNotesController(ApplicationDbContext context, DeliveryNoteDAO deliveryNoteDAO, CustomersDAO customersDAO, ProductDetailDAO productDetailDAO)
+
+
+        public DeliveryNotesController(ApplicationDbContext context, DeliveryNoteDAO deliveryNoteDAO, CustomersDAO customersDAO, ProductDetailDAO productDetailDAO, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _deliveryNoteDAO = deliveryNoteDAO;
             _customerDAO = customersDAO;
             _productDetailDAO = productDetailDAO;
+            _userManager = userManager;
         }
 
         // GET: DeliveryNotes
@@ -34,7 +41,7 @@ namespace WareHouse_WebApp.Controllers
               
               return _context.DeliveryNotes != null ? 
                           View(await _context.DeliveryNotes.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.DeliveryNotes'  is null.");
+                          Problem("Entity set 'ApplicationDbContext.DeliveryNotes' is null.");
         }
 
         // GET: DeliveryNotes/Details/5
@@ -69,11 +76,17 @@ namespace WareHouse_WebApp.Controllers
         // GET: DeliveryNotes/Create
         public async Task<IActionResult> Create()
         {
-            DeliveryNote deliveryNote = await _deliveryNoteDAO.getLastAsync();
-            TempData["LastdeliveryNoteId"] = deliveryNote.DeliveryNoteId;
-            TempData.Keep("productId");
-            TempData.Keep("amountProduct");
-            return View();
+            var product = _context.ProductDetail.ToList();
+            var customer = _context.Customers.ToList();
+
+            var cbDeliModel = new CbDeliModel
+            {
+                deliveryNotes = new DeliveryNote(),
+                customers = customer,
+                products = product
+            };
+
+            return View(cbDeliModel);
         }
 
         // POST: DeliveryNotes/Create
@@ -81,17 +94,50 @@ namespace WareHouse_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DeliveryNoteId,ProductId,CustomerId,EmployeeId,Status,TotalAmount,AmountPaid,AmountOwed,PayMethod")] DeliveryNote deliveryNote)
+        public async Task<IActionResult> Create(CbDeliModel cbDeli)
         {
+            var deliveryNote = cbDeli.deliveryNotes;
+            var user = await _userManager.GetUserAsync(User);
+            deliveryNote.DeliveryNoteId = GenerateDeliId();
             deliveryNote.DateOfCreation = DateTime.Now;
-           //var tmp = deliveryNote.
+
+            var product = _context.ProductDetail.FirstOrDefault(p => p.ProductId == deliveryNote.ProductId);
+
+            if (product != null)
+            {
+                product.Amount -= deliveryNote.AmountProduct;
+                _context.SaveChanges();
+            }
             if (ModelState.IsValid)
             {
+                if (user != null)
+                {
+                    string username = user.UserName;
+                    deliveryNote.EmployeeId = user.UserName;
+                }
+
                 _context.Add(deliveryNote);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(deliveryNote);
+        }
+        private string GenerateDeliId()
+        {
+            string lastEmployeeId = _context.DeliveryNotes.Max(e => e.DeliveryNoteId);
+
+            if (string.IsNullOrEmpty(lastEmployeeId))
+            {
+                return "DL00001";
+            }
+
+            if (int.TryParse(lastEmployeeId[2..], out int number))
+            {
+                string nextNumber = (number + 1).ToString("00000");
+                return $"DL{nextNumber}";
+            }
+
+            return "DL00001";
         }
 
         // GET: DeliveryNotes/Edit/5

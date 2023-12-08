@@ -1,4 +1,4 @@
-﻿@model WareHouse_WebApp.Models.DeliveryNote
+﻿@model WareHouse_WebApp.Models.CbDeliModel
 
 @{
     ViewData["Title"] = "Create";
@@ -27,59 +27,63 @@
 </header>
 
 <h1 class="title">TẠO PHIẾU XUẤT KHO</h1>
-<h1 class="title">@TempData["LastdeliveryNoteId"]</h1>
 <hr />
 <div class="row title">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="DeliveryNoteId" class="control-label">Mã phiếu xuất kho</label>
-                <input asp-for="DeliveryNoteId" class="form-control" value="@LastdeliveryNoteId" readonly/>
-                <span asp-validation-for="DeliveryNoteId" class="text-danger"></span>
+                <label asp-for="deliveryNotes.ProductId" class="control-label">Sản phẩm</label>
+                <select asp-for="deliveryNotes.ProductId" id="selectedProduct" class="form-control">
+                    <option>Chọn sản phẩm</option>
+                @foreach (var product in Model.products)
+                {
+                        <option value="@product.ProductId" data-price="@product.SellingPrice" data-maxquantity="@product.Amount">@product.ProductName</option>
+                }
+                </select>
+                
+                <span asp-validation-for="deliveryNotes.ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deliveryNotes.AmountProduct" class="control-label">Số lượng</label>
+                <input asp-for="deliveryNotes.AmountProduct" id="quantity" class="form-control" />
+                <span asp-validation-for="deliveryNotes.AmountProduct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deliveryNotes.CustomerId" class="control-label">Khách hàng</label>
+                <select asp-for="deliveryNotes.CustomerId" class="form-control">
+                @foreach (var customer in Model.customers)
+                {
+                    <option value="@customer.CustomerId">@customer.CustomerName</option>
+                }
+                </select>
+                <span asp-validation-for="deliveryNotes.CustomerId" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ProductId" class="control-label">Mã sản phẩm</label>
-                <input asp-for="ProductId" class="form-control" value="@TempData["productId"]"/>
-                <span asp-validation-for="ProductId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="CustomerId" class="control-label">Mã khách hàng</label>
-                <input asp-for="CustomerId" class="form-control" />
-                <span asp-validation-for="CustomerId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label">Mã nhân viên</label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                <label asp-for="deliveryNotes.TotalAmount" class="control-label">Tổng tiền</label>
+                <input asp-for="deliveryNotes.TotalAmount" class="form-control" id="totalPrice" readonly />
+                <span asp-validation-for="deliveryNotes.TotalAmount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Status" class="control-label">Trạng thái</label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
+                <label asp-for="deliveryNotes.AmountPaid" class="control-label">Đã thanh toán</label>
+                <input asp-for="deliveryNotes.AmountPaid" id="paidAmount" class="form-control" />
+                <span asp-validation-for="deliveryNotes.AmountPaid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalAmount" class="control-label">Tổng tiền</label>
-                <input asp-for="TotalAmount" class="form-control" value="@TempData["priceBill"]" readonly/>
-                <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                <label asp-for="deliveryNotes.AmountOwed" class="control-label">Còn nợ</label>
+                <input asp-for="deliveryNotes.AmountOwed" id="totalDebt" class="form-control" readonly/>
+                <span asp-validation-for="deliveryNotes.AmountOwed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AmountPaid" class="control-label">Đã trả</label>
-                <input asp-for="AmountPaid" class="form-control" />
-                <span asp-validation-for="AmountPaid" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AmountOwed" class="control-label">Còn nợ</label>
-                <input asp-for="AmountOwed" class="form-control" />
-                <span asp-validation-for="AmountOwed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PayMethod" class="control-label">Phương thức TT</label>
-                <input asp-for="PayMethod" class="form-control" />
-                <span asp-validation-for="PayMethod" class="text-danger"></span>
+                <label asp-for="deliveryNotes.PayMethod" class="control-label">Phương thức TT</label>
+                <select asp-for="deliveryNotes.PayMethod" class="form-control">
+                    <option value="Tiền mặt">Tiền mặt</option>
+                    <option value="Chuyển khoản">Chuyển khoản</option>
+                    <option value="Thẻ">Thẻ</option>
+                </select>
+                <span asp-validation-for="deliveryNotes.PayMethod" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="TẠO PHIẾU" class="btn btn-primary" />
@@ -91,7 +95,29 @@
 <div>
     <a class="title" asp-action="Index">DANH SÁCH PHIẾU</a>
 </div>
+<script>
+    document.getElementById('selectedProduct').addEventListener('change', function() {
+        var maxQuantity = parseInt(this.options[this.selectedIndex].getAttribute('data-maxquantity'));
+        document.getElementById('quantity').setAttribute('max', maxQuantity);
+    });
 
+    function updateTotalPrice() {
+        var price = document.getElementById('selectedProduct').options[document.getElementById('selectedProduct').selectedIndex].getAttribute('data-price');
+        var quantity = document.getElementById('quantity').value;
+        var totalPrice = parseFloat(price) * parseInt(quantity);
+        document.getElementById('totalPrice').value = totalPrice; 
+    }
+
+    document.getElementById('selectedProduct').addEventListener('change', updateTotalPrice);
+    document.getElementById('quantity').addEventListener('input', updateTotalPrice);
+
+    document.getElementById('paidAmount').addEventListener('input', function () {
+        var totalPrice = document.getElementById('totalPrice').value;
+        var paidAmount = parseFloat(this.value);
+        var totalDebt = parseFloat(totalPrice) - paidAmount;
+        document.getElementById('totalDebt').value = totalDebt;
+    });
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

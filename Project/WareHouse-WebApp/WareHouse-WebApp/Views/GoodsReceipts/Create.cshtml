@@ -1,10 +1,9 @@
-﻿@model WareHouse_WebApp.Models.GoodsReceipt
+﻿@model WareHouse_WebApp.Models.CbReceipt
 
 @{
     ViewData["Title"] = "Create";
 }
 @{
-    ViewData["Title"] = "Create";
     var lastItem = TempData["GoodsReceiptId"];
     string GoodsReceiptId = "GR01";
     if (lastItem != null)
@@ -35,73 +34,86 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="GoodsReceiptId" class="control-label">Mã phiếu</label>
-                <input asp-for="GoodsReceiptId" class="form-control" value="@GoodsReceiptId" readonly/>
-                <span asp-validation-for="GoodsReceiptId" class="text-danger"></span>
+                <label asp-for="goodsReceipt.ProductId" class="control-label">Sản phẩm</label>
+                <select asp-for="goodsReceipt.ProductId" id="selectedProduct" class="form-control">
+                    <option>Chọn sản phẩm</option>
+                    @foreach (var product in Model.products)
+                    {
+                        <option value="@product.ProductId" data-price="@product.CostPrice">@product.ProductName</option>
+                    }
+                </select>
+                <span asp-validation-for="goodsReceipt.ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="goodsReceipt.AmountProduct" class="control-label">Số lượng</label>
+                <input asp-for="goodsReceipt.AmountProduct" id="quantity" class="form-control" />
+                <span asp-validation-for="goodsReceipt.AmountProduct" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="ProductId" class="control-label">Mã sản phẩm</label>
-                <input asp-for="ProductId" class="form-control" value="@TempData["productId"]" readonly/>
-                <span asp-validation-for="ProductId" class="text-danger"></span>
+                <label asp-for="goodsReceipt.TotalAmount" class="control-label">Tổng giá</label>
+                <input asp-for="goodsReceipt.TotalAmount" id="totalPrice" class="form-control" readonly/>
+                <span asp-validation-for="goodsReceipt.TotalAmount" class="text-danger"></span>
             </div>
-
+            
             <div class="form-group">
-                <label asp-for="Status" class="control-label">Trạng thái</label>
-                <input asp-for="Status" class="form-control" />
-                <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-@*             <div class="form-group">
-                <label asp-for="DateOfCreation" class="control-label"></label>
-                <input asp-for="DateOfCreation" class="form-control" />
-                <span asp-validation-for="DateOfCreation" class="text-danger"></span>
-            </div> *@
-            <div class="form-group">
-                <label asp-for="TotalAmount" class="control-label">Tổng giá</label>
-                <input asp-for="TotalAmount" class="form-control" />
-                <span asp-validation-for="TotalAmount" class="text-danger"></span>
+                <label asp-for="goodsReceipt.AmountPaid" class="control-label">Đã thanh toán</label>
+                <input asp-for="goodsReceipt.AmountPaid" id="paidAmount" class="form-control" />
+                <span asp-validation-for="goodsReceipt.AmountPaid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Discount" class="control-label">Tiền giảm</label>
-                <input asp-for="Discount" class="form-control" />
-                <span asp-validation-for="Discount" class="text-danger"></span>
+                <label asp-for="goodsReceipt.AmountOwed" class="control-label">Còn nợ</label>
+                <input asp-for="goodsReceipt.AmountOwed" id="totalDebt" class="form-control" readonly/>
+                <span asp-validation-for="goodsReceipt.AmountOwed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AmountPaid" class="control-label">Phải trả</label>
-                <input asp-for="AmountPaid" class="form-control" />
-                <span asp-validation-for="AmountPaid" class="text-danger"></span>
+                <label asp-for="goodsReceipt.PayMethod" class="control-label">Phương thức TT</label>
+                <select asp-for="goodsReceipt.PayMethod" class="form-control">
+                    <option value="Tiền mặt">Tiền mặt</option>
+                    <option value="Chuyển khoản">Chuyển khoản</option>
+                    <option value="Thẻ">Thẻ</option>
+                </select>
+                <span asp-validation-for="goodsReceipt.PayMethod" class="text-danger"></span>
             </div>
+                    
             <div class="form-group">
-                <label asp-for="AmountOwed" class="control-label">Đã thanh toán</label>
-                <input asp-for="AmountOwed" class="form-control" />
-                <span asp-validation-for="AmountOwed" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PayMethod" class="control-label">Phương thức TT</label>
-                <input asp-for="PayMethod" class="form-control" />
-                <span asp-validation-for="PayMethod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label">Mã nhân viên</label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
-            </div>            
-            <div class="form-group">
-                <label asp-for="ManufacturerId" class="control-label">Mã nhà cung cấp</label>
-                <input asp-for="ManufacturerId" class="form-control" />
-                <span asp-validation-for="ManufacturerId" class="text-danger"></span>
+                <label asp-for="goodsReceipt.ManufacturerId" class="control-label">Mã nhà cung cấp</label>
+                <select asp-for="goodsReceipt.ManufacturerId" class="form-control">
+                    @foreach (var manu in Model.manufacturers)
+                    {
+                        <option value="@manu.ManufacturerId">@manu.ManufacturerName</option>
+                    }
+                </select>
+                <span asp-validation-for="goodsReceipt.ManufacturerId" class="text-danger"></span>
             </div>
             <div class="form-group title">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <div class="title">
-                <a asp-action="Index">DANH SÁCH PHIẾU</a>
-            </div>
+            
         </form>
     </div>
 </div>
+<div class="title">
+    <a asp-action="Index">DANH SÁCH PHIẾU</a>
+</div>
+<script>
+    function updateTotalPrice() {
+        var price = document.getElementById('selectedProduct').options[document.getElementById('selectedProduct').selectedIndex].getAttribute('data-price');
+        var quantity = document.getElementById('quantity').value;
+        var totalPrice = parseFloat(price) * parseInt(quantity);
+        document.getElementById('totalPrice').value = totalPrice;
+    }
 
+    document.getElementById('selectedProduct').addEventListener('change', updateTotalPrice);
+    document.getElementById('quantity').addEventListener('input', updateTotalPrice);
 
+    document.getElementById('paidAmount').addEventListener('input', function () {
+        var totalPrice = document.getElementById('totalPrice').value;
+        var paidAmount = parseFloat(this.value);
+        var totalDebt = parseFloat(totalPrice) - paidAmount;
+        document.getElementById('totalDebt').value = totalDebt;
+    });
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

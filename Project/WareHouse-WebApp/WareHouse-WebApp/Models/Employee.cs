@@ -1,24 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace WareHouse_WebApp.Models
 {
     public class Employee
     {
-        [Key]
+        [Key, MaxLength(10)]
         public string? EmployeeId { get; set; }
-        [Required]
-        [StringLength(50)]
+        [MaxLength(30)]
         public string? FirstName { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string? LastName { get; set;}
-        [StringLength(250)]
+        [MaxLength(30)]
+        public string? LastName { get; set; }
         public string? Address { get; set; }
-        [StringLength(250)]
+        [EmailAddress, MaxLength(256)]
         public string? Email { get; set; }
-        [StringLength(15)]
-        public string? PhoneNumber { get; set; }
-        [StringLength(50)]
+        [Phone, MaxLength(10)] 
+        public string Phone { get; set; }
+        [MaxLength(10)]
         public string? Role { get; set; }
     }
 }

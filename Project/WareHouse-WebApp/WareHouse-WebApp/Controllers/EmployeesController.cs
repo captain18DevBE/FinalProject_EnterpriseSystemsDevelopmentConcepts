@@ -2,40 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WareHouse_WebApp.Data;
+using WareHouse_WebApp.Migrations;
 using WareHouse_WebApp.Models;
 
 namespace WareHouse_WebApp.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class EmployeesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public EmployeesController(ApplicationDbContext context)
+        public EmployeesController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-              return _context.Employees != null ? 
-                          View(await _context.Employees.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Employees'  is null.");
+               
+              return _context.Employee != null ? 
+                          View(await _context.Employee.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
         }
 
         // GET: Employees/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.Employees == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employees
+            var employee = await _context.Employee
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
@@ -56,26 +63,60 @@ namespace WareHouse_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeId,FirstName,LastName,Address,Email,PhoneNumber,Role")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmployeeId,FirstName,LastName,Address,Email,Phone,Role")] Employee employee)
         {
-            if (ModelState.IsValid)
+            employee.EmployeeId = GenerateEmployeeId();
+            if (ModelState.IsValid && await _userManager.FindByEmailAsync(employee.Email) == null)
             {
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
+
+                var user = new IdentityUser()
+                {
+                    UserName = employee.EmployeeId,
+                    Email = employee.Email,
+                    EmailConfirmed = true
+                };
+
+                var result = await _userManager.CreateAsync(user, employee.EmployeeId + "@");
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, employee.Role);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(employee);
         }
 
+        private string GenerateEmployeeId()
+        {
+            string lastEmployeeId = _context.Employee.Max(e => e.EmployeeId);
+
+            if (string.IsNullOrEmpty(lastEmployeeId))
+            {
+                return "Nv0001";
+            }
+
+            if (int.TryParse(lastEmployeeId[2..], out int number))
+            {
+                string nextNumber = (number + 1).ToString("0000");
+                return $"Nv{nextNumber}";
+            }
+
+            return "Nv0001";
+        }
+
+
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Employees == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
@@ -88,7 +129,7 @@ namespace WareHouse_WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,FirstName,LastName,Address,Email,PhoneNumber,Role")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("EmployeeId,FirstName,LastName,Address,Email,Phone,Role")] Employee employee)
         {
             if (id != employee.EmployeeId)
             {
@@ -121,12 +162,12 @@ namespace WareHouse_WebApp.Controllers
         // GET: Employees/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Employees == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
 
-            var employee = await _context.Employees
+            var employee = await _context.Employee
                 .FirstOrDefaultAsync(m => m.EmployeeId == id);
             if (employee == null)
             {
@@ -141,14 +182,14 @@ namespace WareHouse_WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Employees == null)
+            if (_context.Employee == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Employees'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
             }
-            var employee = await _context.Employees.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(id);
             if (employee != null)
             {
-                _context.Employees.Remove(employee);
+                _context.Employee.Remove(employee);
             }
             
             await _context.SaveChangesAsync();
@@ -157,7 +198,7 @@ namespace WareHouse_WebApp.Controllers
 
         private bool EmployeeExists(string id)
         {
-          return (_context.Employees?.Any(e => e.EmployeeId == id)).GetValueOrDefault();
+          return (_context.Employee?.Any(e => e.EmployeeId == id)).GetValueOrDefault();
         }
     }
 }

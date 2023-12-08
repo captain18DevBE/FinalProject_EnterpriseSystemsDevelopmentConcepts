@@ -19,6 +19,7 @@ namespace WareHouse_WebApp.Models
         public decimal? AmountPaid { get; set; }
         [Column(TypeName = "decimal(12,2)")]
         public decimal AmountOwed { get; set; }
+        public int AmountProduct { get; set; }
         [StringLength(50)]
         public string? PayMethod { get; set; }
         [Required]

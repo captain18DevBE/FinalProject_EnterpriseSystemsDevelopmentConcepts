@@ -39,13 +39,13 @@
                 Số lượng
             </th>
             <th>
-                Giá bán
+                Giá nhập
             </th>
             <th>
                 Loại mặt hàng
             </th>
             <th>
-                Giảm giá
+                Giá bán
             </th>
             <th>
                 Ngày nhập kho
@@ -82,11 +82,9 @@
                 @Html.DisplayFor(modelItem => item.DateOfBuy)
             </td>
             <td>
-                    <a asp-controller="GoodsReceipts" asp-action="Create" asp-route-id="@item.ProductId">TẠO PHIẾU NHẬP</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">TẠO PHIẾU XUẤT</a> |
                 <a asp-action="Edit" asp-route-id="@item.ProductId">CHỈNH SỬA</a> |
                 <a asp-action="Details" asp-route-id="@item.ProductId">CHI TIẾT SP</a> |
-@*                 <a asp-action="Delete" asp-route-id="@item.ProductId">Xóa</a> *@
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Xóa</a>
             </td>
         </tr>
 }
